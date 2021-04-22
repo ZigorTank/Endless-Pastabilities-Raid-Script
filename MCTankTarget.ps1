@@ -61,7 +61,7 @@ $rogue2 = $list[6]
 $rogue3 = $list[7]
 $rogue4 = $list[8]
 
-$outFile = 'MC-targets.txt'
+$outFile = 'MC-Targets.txt'
 
 $luciferon = @(
     "/rw {star} Tank assignments Luciferon {star}",
@@ -111,9 +111,9 @@ $majordomo = @(
     "/ra $ot2 => {circle}"
 )
 
-$luciferon | Out-String > "$PSScriptRoot/Logs/$outFile"
-$gehennas | Out-String >> "$PSScriptRoot/Logs/$outFile"
-$garr | Out-String >> "$PSScriptRoot/Logs/$outFile"
-$sulfuron | Out-String >> "$PSScriptRoot/Logs/$outFile"
-$golemagg | Out-String >> "$PSScriptRoot/Logs/$outFile"
-$majordomo | Out-String >> "$PSScriptRoot/Logs/$outFile"
+$luciferon | Out-String > "$PSScriptRoot/output/$outFile"
+$gehennas | Out-String >> "$PSScriptRoot/output/$outFile"
+$garr | Out-String >> "$PSScriptRoot/output/$outFile"
+$sulfuron | Out-String >> "$PSScriptRoot/output/$outFile"
+$golemagg | Out-String >> "$PSScriptRoot/output/$outFile"
+$majordomo | Out-String >> "$PSScriptRoot/output/$outFile"

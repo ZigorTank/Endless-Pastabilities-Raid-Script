@@ -36,7 +36,7 @@ $SortedCsvObject = $csvFile | Select-String -NoEmphasis -Pattern `
 'Feral,',
 'Balance,' | ConvertFrom-Csv | Sort-Object -Property 'Timestamp'
 
-$SortedCsvObject | Format-Table > $PSScriptRoot/Logs/"debugList.txt"
+$SortedCsvObject | Format-Table > $PSScriptRoot/output/"debugList.txt"
 
 $nbOfPeeps = switch($raid) {
 	'MC' {40}
@@ -59,12 +59,12 @@ $finalList = $peepList | Where-Object Role -ne 'Tentative' | Where-Object Role -
 $benchList = $peepList | Where-Object Role -eq 'Bench'
 $tentativeList = $peepList| Where-Object Role -eq 'Tentative'
 
-$rosterOutFile = "$PSScriptRoot/Logs/$raid-Roster.txt"
+$rosterOutFile = "$PSScriptRoot/output/$raid-Roster.txt"
 $firstTempFile = New-TemporaryFile
 $finalList | Select-Object -First $nbOfPeeps | Format-Table -Property Name -HideTableHeaders | Out-String > $firstTempFile
 Get-Content $firstTempFile | Select-Object -Skip 1 > $rosterOutFile
 
-$restOutFile = "$PSScriptRoot/Logs/$raid-Rest.txt"
+$restOutFile = "$PSScriptRoot/output/$raid-Rest.txt"
 "Tentative List :" > $restOutFile
 $tentativeTempFile = New-TemporaryFile
 $tentativeList | Format-Table -Property Name, Spec | Out-String > $tentativeTempFile
