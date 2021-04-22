@@ -55,7 +55,7 @@ $SortedCsvObject | ForEach-Object {
 	}
 }
 
-$finalList = $peepList | Where-Object Role -ne 'Tentative' | Where-Object Role -ne 'Bench'
+$finalList = $peepList | Where-Object Role -ne 'Tentative' | Where-Object Role -ne 'Bench' | Where-Object Role -ne 'Absence'
 $benchList = $peepList | Where-Object Role -eq 'Bench'
 $tentativeList = $peepList| Where-Object Role -eq 'Tentative'
 
