@@ -170,5 +170,18 @@ function Resolve-ToonName {
         }
     }
 
+    # Dunbledore/Dunfuktup/Wizstick/Geesus/Dunski
+    if($obj.ID -eq '332729827478208512') {
+        $name = switch($obj.Spec) {
+            'Warlock' {'Dunbledore'; Break}
+            'Rogue' {'Dunfuktup'; Break}
+            'Mage' {'Wizstick'; Break}
+            'Priest' {'Geesus'; Break}
+            'Warrior' {'Dunski'; Break}
+            'Tank' {'Dunski'; Break}
+            Default {$name}
+        }
+    }
+
     return $name
 }
