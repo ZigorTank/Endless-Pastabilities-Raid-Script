@@ -14,6 +14,8 @@ function Resolve-ToonName {
             'Mage' {'Ayyohee'; Break}
             'Tank' {'Brawnn'; Break}
             'Warrior' {'Brawnn'; Break}
+            'Priest' {'Wingleenie'; Break}
+            'Shadow' {'Wingleenie'; Break}
             Default {$name}
         }
     }
@@ -155,6 +157,15 @@ function Resolve-ToonName {
         $name = switch($obj.Spec) {
             'Priest' {'Moonmother'; Break}
             'Hunter' {'Bigkitty'; Break}
+            Default {$name}
+        }
+    }
+
+    # Okrogre/iaremage
+    if($obj.ID -eq '532182136170610689') {
+        $name = switch($obj.Spec) {
+            'Rogue' {'Okrogre'; Break}
+            'Mage' {'Iaremage'; Break}
             Default {$name}
         }
     }
