@@ -183,5 +183,29 @@ function Resolve-ToonName {
         }
     }
 
+    # Donninan/Masiliyo
+    if($obj.ID -eq '627471150754168853') {
+        $name = switch($obj.Spec) {
+            'RestoDruid' {'Masiliyo'; Break}
+            'Bear' {'Masiliyo'; Break}
+            'Feral' {'Masiliyo'; Break}
+            'Balance' {'Masiliyo'; Break}
+            'Priest' {'Donninan'; Break}
+            'Shadow' {'Donninan'; Break}
+            Default {$name}
+        }
+    }
+
+    # Enchanterzim/Keeperofjuke
+    if($obj.ID -eq '609979693260603402') {
+        $name = switch($obj.Spec) {
+            'Warlock' {'Enchanterzim'; Break}
+            'Rogue' {'Keeperofjuke'; Break}
+            'Hunter' {'Merryjane'; Break}
+            'Mage' {'Dankandspank'; Break}
+            Default {$name}
+        }
+    }
+
     return $name
 }
