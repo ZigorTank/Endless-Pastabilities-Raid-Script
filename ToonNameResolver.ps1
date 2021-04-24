@@ -207,5 +207,51 @@ function Resolve-ToonName {
         }
     }
 
+    # Heelflip/Kickturn
+    if($obj.ID -eq '331601303153278976') {
+        $name = switch($obj.Spec) {
+            'Warlock' {'Heelflip'; Break}
+            'Rogue' {'Kickturn'; Break}
+            'RestoShaman' {'Utterette'; Break}
+            'Enhancer' {'Utterette'; Break}
+            'Elemental' {'Utterette'; Break}
+            Default {$name}
+        }
+    }
+
+    # Dakanu/Emcaga
+    if($obj.ID -eq '694953116302573569') {
+        $name = switch($obj.Spec) {
+            'Warlock' {'Emcaga'; Break}
+            'Priest' {'Dakanu'; Break}
+            Default {$name}
+        }
+    }
+
+    # Spacebus/Scoby
+    if($obj.ID -eq '693579254922739782') {
+        $name = switch($obj.Spec) {
+            'Warrior' {'Scoby'; Break}
+            'Tank' {'Scoby'; Break}
+            'Mage' {'Spacebus'; Break}
+            Default {$name}
+        }
+    }
+
+    # Tarp/Mahboofs/Bovinebooty
+    if($obj.ID -eq '722481056221102171') {
+        $name = switch($obj.Spec) {
+            'RestoShaman' {'Tarp'; Break}
+            'Enhancer' {'Tarp'; Break}
+            'Elemental' {'Tarp'; Break}
+            'Hunter' {'Mahboofs'; Break}
+            'RestoDruid' {'Bovinebooty'; Break}
+            'Bear' {'Bovinebooty'; Break}
+            'Feral' {'Bovinebooty'; Break}
+            'Balance' {'Bovinebooty'; Break}
+            Default {$name}
+        }
+    }
+
     return $name
 }
