@@ -10,21 +10,27 @@ Type `!print <EventID>` in #bot-log
 
 3. Move the downloaded CSV to the `Endless-Pastabilities-Raid-Script` folder.
 
-4. In a Powershell terminal, invoke the `Raid-Helper.ps1` script and pass the CSV file as a parameter.
+4. In a Powershell terminal, invoke the `ResolveNames.ps1` script and pass the CSV file as a parameter.
 
-`.\Raid-Helper.ps1 -csv .\707655085483753555-834081080096063509.csv`
+`.\ResolveNames.ps1 -csv .\707655085483753555-834081080096063509.csv`
 
-5. Open the output text file `MC-Roster.txt` and copy its content.
+5. Open the output text file `CleanList.txt` and copy its content.
 
-6. In game, open the Raid-Helper add-on window and paste your list in the "Enter names here:" field.
+6. Open the `MC Pasta Roster` Google sheet and paste the clean list in cell M1.
+
+7. Manually build the roster by copy/paste names into groups.
+
+8. When done, select the roster (cells B2 to I6)
+
+9. In game, open the Raid-Helper add-on window and paste your list in the "Enter names here:" field.
 
 7. Accept the change.
 ==> This will populate the Invite list area
 
 ## Managing Toon Names
-The ToonNameResolver.ps1 contains a function used by `Raid-Helper.ps1` to resolve toon names.
+The ToonNameResolver.ps1 contains a function used by `ResolveNames.ps1` to resolve toon names.
 It's based on user's Discord ID.
-The Discord IDs can be seen in the `DebugList.txt` that is produced when you run the `Raid-Helper.ps1` script.
+The Discord IDs can be seen in the `RawList.txt` that is produced when you run the `ResolveNames.ps1` script.
 By using this ID, I can assign a name based on the "spec" listed on the signup output.
 
 ``` powershell
@@ -44,7 +50,7 @@ if($obj.ID -eq '320453218867871744') {
 ```
 This way, the right name will be used to populate the roster list.
 Of course, this switch is manually built which is tedious, but since it does not change,
-it looks as a good investment.
+it looks like a good investment.
 
 ## Building tank targets macros for Molten Core
 You need to modify the `MCTankList.txt` by typing the 9 names needed for different bosses.
@@ -59,7 +65,7 @@ The role list is :
 - Rogue3
 - Rogue4
 
-The Rogue role can be replaced by any toons with interrupt hability.
+The Rogue role can be replaced by any toons with interrupt habilities.
 
 Then, just run : `.\MCTankTarget.ps1 -tankFile .\MCTankList.txt`
 This will produce a file named `MC-Targets.txt` containing a list of macros that you need to copy/paste in your in-game macros
