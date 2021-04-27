@@ -253,5 +253,22 @@ function Resolve-ToonName {
         }
     }
 
+    # Slizzle<Lefthook>
+    if($obj.ID -eq '688541032996274180') {
+        $name = switch($obj.Spec) {
+            'Warlock' {'Slizzle'; Break}
+            Default {$name}
+        }
+    }
+
+    # Kappo/Holykap
+    if($obj.ID -eq '378778502687621122') {
+        $name = switch($obj.Spec) {
+            'Hunter' {'Kappo'; Break}
+            'Priest' {'Holykap'; Break}
+            Default {$name}
+        }
+    }
+
     return $name
 }
