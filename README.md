@@ -24,7 +24,7 @@ Type `!print <EventID>` in #bot-log
 ## Managing Toon Names
 The ToonNameResolver.ps1 contains a function used by `Raid-Helper.ps1` to resolve toon names.
 It's based on user's Discord ID.
-The Discord IDs can be seen in the `DebugList.txt` that is produced when you run the `Raid-Helper.ps1` script
+The Discord IDs can be seen in the `DebugList.txt` that is produced when you run the `Raid-Helper.ps1` script.
 By using this ID, I can assign a name based on the "spec" listed on the signup output.
 
 ``` powershell
@@ -46,7 +46,7 @@ This way, the right name will be used to populate the roster list.
 Of course, this switch is manually built which is tedious, but since it does not change,
 it looks as a good investment.
 
-## Building Tand targets macros for Molten Core
+## Building tank targets macros for Molten Core
 You need to modify the `MCTankList.txt` by typing the 9 names needed for different bosses.
 The role list is :
 - MainTank1
