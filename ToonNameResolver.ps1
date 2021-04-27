@@ -270,5 +270,24 @@ function Resolve-ToonName {
         }
     }
 
+
+    # Doomz/Qilat
+    if($obj.ID -eq '832950641902878750') {
+        $name = switch($obj.Spec) {
+            'Mage' {'Doomz'; Break}
+            Default {$name}
+        }
+    }
+
+
+    # Alita/Bartuc
+    if($obj.ID -eq '744236970359652444') {
+        $name = switch($obj.Spec) {
+            'Warlock' {'Alita'; Break}
+            'Rogue' {'Bartuc'; Break}
+            Default {$name}
+        }
+    }
+
     return $name
 }
